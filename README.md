@@ -36,10 +36,12 @@ int startCity=rand()%51;
 當螞蟻走訪完所有城市，建立一個新的完整的路徑後，便會進行路徑上費洛蒙量的更新。<br>
 為了確保從a城市到b城市和b城市到a城市的路徑是識為相同的，因此在下方的for迴圈中有將目的地和出發點對調，以確保之後無論出發點為何，只要是到達此路徑費洛蒙的數量都不會受影響。<br>
 其中的`phermoneAmount`為一常數，將其設為`100`。<br>
+```c
 for(int n=0;n<route.size()-1;n++){
 	deltaphermone[route[n]][route[n+1]]+=phermoneAmount/dis[k];
 	deltaphermone[route[n+1]][route[n]]+=phermoneAmount/dis[k];
 }
+```
 ### Evaluation
 
 ### Determination
