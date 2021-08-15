@@ -27,7 +27,7 @@ for(int j=0;j<51;j++){
 }
 ```
 ### Transition
-* 蟻群建立新的路徑
+* 蟻群建立新的路徑<br>
 	測試
 * 費洛蒙的更新
 ### Evaluation
