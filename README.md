@@ -2,8 +2,8 @@
 Using ant colony optimizer to solve TSP
 ## 程式流程
 ### 簡介
-    本次作業採用的資料為eil51，總共有51座城市，使用ant-colony-optimizer來解決最短路徑問題
-    蟻群數量設定為20隻，進行51個run，每個run總共有1000次迭代。
+本次作業採用的資料為eil51，總共有51座城市，使用ant-colony-optimizer來解決最短路徑問題<br>
+蟻群數量設定為20隻，進行51個run，每個run總共有1000次迭代。
 ### Initialization
 首先將所有可能路徑的距離計算出來，並且給予所有路徑一個初始的費洛蒙值，此次設為0.5。<br>
 下方為計算所有城市間可行路徑的所有距離。
