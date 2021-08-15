@@ -27,9 +27,12 @@ for(int j=0;j<51;j++){
 }
 ```
 ### Transition
-* 蟻群建立新的路徑<br>
-	測試
-* 費洛蒙的更新
+#### 蟻群建立新的路徑
+每隻螞蟻會先隨機選一城市作為出發點。<br>
+```c
+int startCity=rand()%51;
+```
+#### 費洛蒙的更新
 ### Evaluation
 
 ### Determination
