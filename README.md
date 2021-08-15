@@ -107,7 +107,7 @@ result[i][j]=tmp;
 最後在每個run結束前會將每個iteration的結果做比較，得出的最佳解會存到`result.txt`中。<br>
 ## 程式結果
 下圖為每個iteration的平均值<br>
-<img src="https://github.com/chaoyen199611/Ant-Colony-Optimizer/blob/main/Figure_1.png" alt="drawing" width="500"/>
+<img src="https://github.com/chaoyen199611/Ant-Colony-Optimizer/blob/main/Figure_1.png" alt="drawing" width="500"/><br>
 下表為每個run的最小值<br>
 run | length|run | length|run | length|run | length|run | length|run | length| 
 ----|:-----:|----|:-----:|----|:-----:|----|:-----:|----|:-----:|----|:-----:|
@@ -121,5 +121,5 @@ run | length|run | length|run | length|run | length|run | length|run | length|
   08|443.352|  18|455.858|  28|442.964|  38|456.542|  48|441.76 | 
   09|434.732|  19|469.829|  29|429.068|  39|454.632|  49|444.222| 
   10|429.37 |  20|442.852|  30|456.289|  40|440.842|  50|453.251| 
-
+從表中可以得到`MAX`值為473.125而`MIN`值為427.32<br>
 
