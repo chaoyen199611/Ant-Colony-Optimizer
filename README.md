@@ -104,6 +104,7 @@ for(int n=0;n<ants;n++){
 result[i][j]=tmp;
 ```
 ### Determination
+最後在每個run結束前會將每個iteration的結果做比較，得出的最佳解會存到`result.txt`中。<br>
 ## 程式結果
 <img src="https://github.com/chaoyen199611/Ant-Colony-Optimizer/blob/main/Figure_1.png" alt="drawing" width="500"/>
 
