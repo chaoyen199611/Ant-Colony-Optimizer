@@ -16,9 +16,10 @@ for(int i=0;i<location.size();i++){
 		result=sqrt(x+y);
 		distance[i][j]=result;
 	}
-}```
-將所有路徑上的費洛蒙初始值設為0.5。
-
+}
+```
+	將所有路徑上的費洛蒙初始值設為0.5。
+```c
 for(int j=0;j<51;j++){
 	for(int k=0;k<51;k++){
 		phermone[j][k]=initialPhermone;
