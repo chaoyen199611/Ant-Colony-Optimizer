@@ -36,6 +36,8 @@ int startCity=rand()%51;
 當螞蟻走訪完所有城市，建立一個新的完整的路徑後，便會進行路徑上費洛蒙量的更新。<br>
 為了確保從a城市到b城市和b城市到a城市的路徑是識為相同的，因此在下方的for迴圈中有將目的地和出發點對調，以確保之後無論出發點為何，只要是到達此路徑費洛蒙的數量都不會受影響。<br>
 其中的`phermoneAmount`為一常數，將其設為`100`，而`dis[k]`則為當前螞蟻k這次疊代的路徑總長<br>
+下圖為參考公式和程式碼<br>
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/da75f512c94f2b2737112bebbf97539f5f6928c0" alt="drawing" width="500"/><br>
 ```c
 for(int n=0;n<route.size()-1;n++){
 	deltaphermone[route[n]][route[n+1]]+=phermoneAmount/dis[k];
@@ -43,7 +45,7 @@ for(int n=0;n<route.size()-1;n++){
 }
 ```
 下圖為費洛蒙更新的公式<br>
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/62ef8b59ad37970b4e693ee923b6d7db8bbd5c30" atl="drawing" width="500"/>
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/62ef8b59ad37970b4e693ee923b6d7db8bbd5c30" alt="drawing" width="500"/><br>
 上方已經計算出每個路徑上的Δphermone，接著在每次迭代結束後帶入此公式則能更新每個路徑上存留的費洛蒙數量。<br>
 其中的`vaporRate`為一常數，也就是蒸發的量。<br>
 ```c
