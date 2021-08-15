@@ -46,4 +46,5 @@ for(int n=0;n<route.size()-1;n++){
 
 ### Determination
 ## 程式結果
-![](https://github.com/chaoyen199611/Ant-Colony-Optimizer/blob/main/Figure_1.png)
+<img src="https://github.com/chaoyen199611/Ant-Colony-Optimizer/blob/main/Figure_1.png" alt="drawing" width="200"/>
+
