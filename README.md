@@ -6,7 +6,7 @@ Using ant colony optimizer to solve TSP
     蟻群數量設定為20隻，進行51個run，每個run總共有1000次迭代。
 ### Initialize
     首先將所有可能路徑的距離計算出來，並且給予所有路徑一個初始的費洛蒙值，此次設為。
-    ```c++
+    ```c
     for(int i=0;i<location.size();i++){
 		for(int j=0;j<location.size();j++){
 			double x,y,result;
