@@ -26,5 +26,11 @@ for(int j=0;j<51;j++){
 	}
 }
 ```
+### Transition
+* 蟻群建立新的路徑
+* 費洛蒙的更新
+### Evaluation
+
+### Determination
 ## 程式結果
 ![](https://github.com/chaoyen199611/Ant-Colony-Optimizer/blob/main/Figure_1.png)
