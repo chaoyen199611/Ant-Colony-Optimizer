@@ -16,7 +16,7 @@ for(int i=0;i<location.size();i++){
 		result=sqrt(x+y);
 		distance[i][j]=result;
 	}
-}
+}```
 將所有路徑上的費洛蒙初始值設為0.5。
 
 for(int j=0;j<51;j++){
