@@ -42,9 +42,26 @@ for(int n=0;n<route.size()-1;n++){
 	deltaphermone[route[n+1]][route[n]]+=phermoneAmount/dis[k];
 }
 ```
-<img src="https://i.stack.imgur.com/yBBDr.png" atl="drawing" width="500"/>
+下圖為費洛蒙更新的公式<br>
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/62ef8b59ad37970b4e693ee923b6d7db8bbd5c30" atl="drawing" width="500"/>
+上方已經計算出每個路徑上的Δphermone，接著在每次迭代結束後帶入此公式則能更新每個路徑上存留的費洛蒙數量。<br>
+其中的`vaporRate`為一常數，也就是蒸發的量。<br>
+```c
+for(int n=0;n<51;n++){
+	for(int k=0;k<51;k++){
+		phermone[n][k]=(1-vaporRate)*phermone[n][k]+deltaphermone[n][k];
+	}
+}
+```
 ### Evaluation
-
+每一次迭代結束，我們可以得到`n`隻螞蟻新的路徑，在此次作業中為20隻，接著在20個路徑中找尋到最短路徑，即是我這次迭代的最佳結果。<br>
+```c
+double tmp=2000;
+for(int n=0;n<ants;n++){
+	if(dis[n]<tmp) tmp=dis[n];
+}
+result[i][j]=tmp;
+```
 ### Determination
 ## 程式結果
 <img src="https://github.com/chaoyen199611/Ant-Colony-Optimizer/blob/main/Figure_1.png" alt="drawing" width="500"/>
