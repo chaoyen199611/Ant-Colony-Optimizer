@@ -32,6 +32,45 @@ for(int j=0;j<51;j++){
 ```c
 int startCity=rand()%51;
 ```
+利用下方的公式，可以得出當前螞蟻造所有可行路徑的機率為多少，接著再使用`Roulette Wheel Selection`的方式來選出下個點<br>
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a55af3e02c1e319b5b8be2c626e6cf851e8078f9" alt="drawing" width="500"/><br>
+下方為我的程式碼<br>
+```c
+while(--remainCity){
+	double total=0,prob[51],range=0;
+	vector<int> toCheck;
+	for(int n=0;n<51;n++){
+		if(notVisit[n]){
+			toCheck.push_back(n);//將當前可行路徑放到陣列中
+		}
+	}
+	double a,b,alpha=1,beta=2;//公式中的alpha beta為兩個常數，用以控制費洛蒙或路徑長在計算機率時的重要性
+	for(int n=0;n<toCheck.size();n++){
+		a=pow((1.0/distance[currentX][toCheck[n]]),alpha);
+		b=pow(phermone[currentX][toCheck[n]],beta);
+		total+=(a*b);
+		//此for迴圈在記錄分母部份，並存至total中
+	}
+	for(int n=0;n<toCheck.size();n++){
+		a=pow((1.0/distance[currentX][toCheck[n]]),alpha);
+		b=pow(phermone[currentX][toCheck[n]],beta);
+		range+=(a*b/total);
+		prob[n]=range;
+		//此迴圈用以算出每個可行路徑的機率
+	}
+	double random=(double)rand()/(RAND_MAX+1.0);
+	for(int n=0;n<toCheck.size();n++){
+		if(random<=prob[n]){
+			dis[k]+=distance[currentX][toCheck[n]];
+			notVisit[toCheck[n]]=0;
+			currentX=toCheck[n];
+			route.push_back(currentX);
+			break;
+			//找到可行解，並將當前位置往後移並跳出迴圈已循照路徑中的下一個節點。
+		}
+	}
+}
+```
 #### 費洛蒙的更新
 當螞蟻走訪完所有城市，建立一個新的完整的路徑後，便會進行路徑上費洛蒙量的更新。<br>
 為了確保從a城市到b城市和b城市到a城市的路徑是識為相同的，因此在下方的for迴圈中有將目的地和出發點對調，以確保之後無論出發點為何，只要是到達此路徑費洛蒙的數量都不會受影響。<br>
